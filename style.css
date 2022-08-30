@@ -1,0 +1,62 @@
+body {
+    margin: 0; 
+    padding: 0; 
+    height: 100vh; 
+    width: 100vw; 
+    background: rgb(51, 51, 51); 
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.menu {
+    height: 7.5vh; 
+    width: 100vw; 
+    background-color: rgb(0, 0, 0); 
+    display: flex;
+    align-items: center; 
+    gap: 1rem; 
+    color: rgb(23, 255, 73);
+}
+
+.logo {
+    padding: 1rem; 
+    font-size: 2rem; 
+    padding-left: 3%;
+}
+
+.select {
+    display: flex; 
+    align-items: center; 
+    font-size: 1.2rem; 
+    padding: 1rem; 
+    padding-left: 6%;
+    gap: 12rem;
+}
+
+.option {
+    width: 100%;
+}
+
+.dropdown {
+    width: 8rem;
+    height: 0.2rem;
+    margin-top: 0.2rem;
+    position: absolute;
+    background-color: rgb(23, 255, 73);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.dropdown-option {
+    padding: 0.5rem;
+    background-color: rgb(23, 255, 73);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    color: black;
+}
+
+.hidden {
+    font-size: 0px;
+}
