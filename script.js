@@ -56,7 +56,7 @@ const more = document.querySelector('.more');
 
 single.forEach(div => {
     let line = div.children[0];
-    
+
     div.addEventListener('mouseover', () => {
         div.style.color = 'white';
         line.style.background = 'white';
@@ -64,6 +64,12 @@ single.forEach(div => {
     div.addEventListener('mouseout', () => {
         div.style.color = 'rgb(23, 255, 73)';
         line.style.background = 'rgb(23, 255, 73)';
+    });
+});
+
+single.forEach(div => { // place holder to add click events to drop down menu options
+    div.addEventListener('click', () => {
+        console.log(div.textContent);
     });
 });
 
