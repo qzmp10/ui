@@ -1,9 +1,14 @@
-(function createDropDownMenu () {
+let dropDownMenu = (function () {
+
 const body = document.querySelector('body');
 
-body.innerHTML =  '<div class="menu">'+ //can modify HTML here
+let menuHTML = '<div class="menu">'+ //can modify HTML here
 '      <div class="logo">Logo</div>'+
 '      <div class="select">'+
+'          <div class="single">Text 0'+
+'              <div class="dropdown">'+
+'              </div>'+
+'          </div>'+
 '          <div class="option">Text 1'+
 '              <div class="dropdown">'+
 '                  <div class="hidden">►Text</div>'+
@@ -39,18 +44,33 @@ body.innerHTML =  '<div class="menu">'+ //can modify HTML here
 '      </div>'+
 '  </div>';
 
+body.innerHTML = menuHTML; 
+
 
 const menu = document.querySelector('.menu');
 const logo = document.querySelector('.logo');
 const select = document.querySelector('.select');
+const single = document.querySelectorAll('.single');
 const options = document.querySelectorAll('.option');
 const more = document.querySelector('.more');
 
+single.forEach(div => {
+    let line = div.children[0];
+    
+    div.addEventListener('mouseover', () => {
+        div.style.color = 'white';
+        line.style.background = 'white';
+    });
+    div.addEventListener('mouseout', () => {
+        div.style.color = 'rgb(23, 255, 73)';
+        line.style.background = 'rgb(23, 255, 73)';
+    });
+});
 
-options.forEach(option => { //css & dom
+
+options.forEach(option => {
     const dropdown = option.children[0];
     let dropdownOptions = dropdown.children;
-
 
     for (const div of dropdownOptions) { // place holder to add click events to drop down menu options
         if(div.textContent === '►Text'){
@@ -59,6 +79,10 @@ options.forEach(option => { //css & dom
             });
         };
     }; 
+})
+
+options.forEach(option => { //css & dom
+    const dropdown = option.children[0];
 
     option.addEventListener('mouseover', () => {
         dropdown.style.width = '12rem';
@@ -78,7 +102,6 @@ options.forEach(option => { //css & dom
                 dropdown.children[i].style.background = 'rgb(23, 255, 73)';
             });
         };
-
     });
 
     option.addEventListener('mouseout', () => {
@@ -91,6 +114,9 @@ options.forEach(option => { //css & dom
         };
     });
 });
+
+return { body, menuHTML, menu, select, options, more, logo, single };
+
 })();
 
 

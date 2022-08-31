@@ -36,6 +36,10 @@ body {
     width: 100%;
 }
 
+.single {
+    width: 100%;
+}
+
 .dropdown {
     width: 8rem;
     height: 0.2rem;
